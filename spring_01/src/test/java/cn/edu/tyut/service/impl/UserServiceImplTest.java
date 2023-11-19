@@ -20,6 +20,8 @@ class UserServiceImplTest {
     void login() {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         UserService userServiceImpl = (UserService) applicationContext.getBean("userService");
+        UserService userService = applicationContext.getBean(UserService.class);
+        userService.login("1", "2");
         userServiceImpl.login("张三", "123456");
     }
 }

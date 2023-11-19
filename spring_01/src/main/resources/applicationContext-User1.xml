@@ -3,9 +3,10 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="user1" class="User1">
+    <!--    id属性是用于唯一标识bean，而name属性是用于给bean定义一个或多个名称-->
+    <bean name="user1" class="User1">
         <constructor-arg name="id" value="1"/>
-        <constructor-arg name="name" value="张三User1"/>
+        <constructor-arg name="name" value="张三user1"/>
         <constructor-arg name="password" value="123456"/>
     </bean>
 </beans>

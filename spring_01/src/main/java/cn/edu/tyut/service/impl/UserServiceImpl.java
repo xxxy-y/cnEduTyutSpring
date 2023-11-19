@@ -12,7 +12,7 @@ import cn.edu.tyut.service.UserService;
  * @Package_Name cn.edu.tyut.service.impl
  */
 public class UserServiceImpl implements UserService {
-    UserDao userDao;
+    private UserDao userDao;
 
     public void setUserDao(UserDao userDao) {
         this.userDao = userDao;

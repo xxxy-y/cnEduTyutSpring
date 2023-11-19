@@ -3,9 +3,9 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="user2" class="User2">
-        <property name="id" value="1"/>
-        <property name="name" value="张三user2"/>
-        <property name="password" value="123456"/>
-    </bean>
+    <bean id="artStudent" class="cn.edu.tyut.entity.ArtStudent" depends-on="student"/>
+    <bean name="student" class="cn.edu.tyut.entity.Student" scope="prototype"/>
+    <bean id="sportStudent" class="cn.edu.tyut.entity.SportStudent" lazy-init="true"/>
+
+    <alias name="sportStudent" alias="sStudent"/>
 </beans>

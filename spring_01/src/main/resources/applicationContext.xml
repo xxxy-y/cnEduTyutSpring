@@ -8,6 +8,7 @@
     </bean>
     <bean id="userDao" class="cn.edu.tyut.dao.impl.UserDaoImpl"/>
     <bean id="userService" class="cn.edu.tyut.service.impl.UserServiceImpl">
+        <!--        这里面的name是类中的属性名称    -->
         <property name="userDao" ref="userDao"/>
     </bean>
 </beans>

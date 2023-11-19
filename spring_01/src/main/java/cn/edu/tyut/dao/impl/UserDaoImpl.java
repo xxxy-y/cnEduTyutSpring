@@ -18,7 +18,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void login(String name, String password) {
-        if(Objects.equals(name, NAME_USER) && Objects.equals(password, PASSWORD_USER)) {
+        if (Objects.equals(name, NAME_USER) && Objects.equals(password, PASSWORD_USER)) {
             System.out.println("登录成功");
             return;
         }
