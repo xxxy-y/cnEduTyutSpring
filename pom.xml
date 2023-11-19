@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>spring_01</module>
+        <module>spring_AutomaticAssembly</module>
     </modules>
 
     <properties>
