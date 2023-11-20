@@ -11,6 +11,8 @@
     <modules>
         <module>spring_01</module>
         <module>spring_AutomaticAssembly</module>
+        <module>spring_02</module>
+        <module>spring_02Annotation</module>
     </modules>
 
     <properties>
@@ -36,6 +38,12 @@
             <artifactId>junit-jupiter-api</artifactId>
             <version>5.10.1</version>
             <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/jakarta.annotation/jakarta.annotation-api -->
+        <dependency>
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
+            <version>3.0.0-M1</version>
         </dependency>
     </dependencies>
     <build>

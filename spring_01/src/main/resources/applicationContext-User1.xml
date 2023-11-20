@@ -5,8 +5,8 @@
         https://www.springframework.org/schema/beans/spring-beans.xsd">
     <!--    id属性是用于唯一标识bean，而name属性是用于给bean定义一个或多个名称-->
     <bean name="user1" class="User1">
-        <constructor-arg name="id" value="1"/>
-        <constructor-arg name="name" value="张三user1"/>
-        <constructor-arg name="password" value="123456"/>
+        <constructor-arg index="0" value="1"/>
+        <constructor-arg name="name" index="1" value="张三user1"/>
+        <constructor-arg name="password" index="2" value="123456"/>
     </bean>
 </beans>

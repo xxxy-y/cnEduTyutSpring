@@ -22,8 +22,10 @@ class TeacherTest {
         Teacher teacher = applicationContext.getBean("teacher", Teacher.class);
         Teacher1 teacher1 = applicationContext.getBean("teacherList", Teacher1.class);
         Teacher2 teacher2 = applicationContext.getBean("teacherMap", Teacher2.class);
+        Teacher3 teacher3 = applicationContext.getBean("teacherSet", Teacher3.class);
         System.out.println(teacher);
         System.out.println(teacher1);
         System.out.println(teacher2);
+        System.out.println(teacher3);
     }
 }
