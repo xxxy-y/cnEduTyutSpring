@@ -12,4 +12,12 @@ public class Student {
     public void hello() {
         System.out.println("Hello World!");
     }
+
+    public void init() {
+        System.out.println("init");
+    }
+
+    public void destroy() {
+        System.out.println("destroy");
+    }
 }

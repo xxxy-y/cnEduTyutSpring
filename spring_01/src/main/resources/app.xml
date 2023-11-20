@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd" default-lazy-init="true" default-init-method="init">
+    <bean id="personA" class="cn.edu.tyut.entity.PersonA" abstract="true">
+        <property name="name" value="1"/>
+    </bean>
+    <bean id="personB" class="cn.edu.tyut.entity.PersonB" parent="personA">
+        <property name="name" value="2"/>
+        <property name="age" value="20"/>
+    </bean>
+</beans>
