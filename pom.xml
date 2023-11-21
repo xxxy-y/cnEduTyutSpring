@@ -13,6 +13,7 @@
         <module>spring_AutomaticAssembly</module>
         <module>spring_02</module>
         <module>spring_02Annotation</module>
+        <module>spring_03Annotation</module>
     </modules>
 
     <properties>

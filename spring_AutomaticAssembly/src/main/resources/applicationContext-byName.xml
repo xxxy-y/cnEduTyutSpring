@@ -5,5 +5,5 @@
         https://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean id="sportTeacher" class="cn.edu.tyut.entity.SportTeacher"/>
     <bean id="artTeacher" class="cn.edu.tyut.entity.ArtTeacher"/>
-    <bean id="student" class="cn.edu.tyut.entity.Student" autowire="byName"/>
+    <bean id="student01" class="cn.edu.tyut.entity.Student01" autowire="byName"/>
 </beans>
