@@ -20,7 +20,8 @@ import java.util.Date;
  */
 @Configuration
 @ComponentScans({
-        @ComponentScan("cn.edu.tyut.entity")
+        @ComponentScan("cn.edu.tyut.entity"),
+        @ComponentScan("cn.edu.tyut.listener")
 })
 @EnableAsync
 @EnableScheduling

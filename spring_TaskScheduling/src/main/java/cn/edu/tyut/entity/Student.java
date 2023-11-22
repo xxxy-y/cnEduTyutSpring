@@ -34,9 +34,10 @@ public class Student {
         System.out.println("我是异步执行的方法，结束！");
     }
 
+
     /**
      * 定时方法不需要主动调用
-     * 定时方法需要指定'cron', 'fixedDelay(String)', or 'fixedRate(String)'的其中一个，否则无法创建定时任务，他们的区别如下：
+     * 定时方法需要指定' cron', 'fixedDelay(String)', or 'fixedRate(String)'的其中一个，否则无法创建定时任务，他们的区别如下：
      * fixedDelay：在上一次定时任务执行完之后，间隔多久继续执行。
      * fixedRate：无论上一次定时任务有没有执行完成，两次任务之间的时间间隔。
      * cron：如果嫌上面两个不够灵活，你还可以使用cron表达式来指定任务计划。
