@@ -14,6 +14,7 @@
         <module>spring_02</module>
         <module>spring_02Annotation</module>
         <module>spring_03Annotation</module>
+        <module>spring_TaskScheduling</module>
     </modules>
 
     <properties>
