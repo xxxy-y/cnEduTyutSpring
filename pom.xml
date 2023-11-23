@@ -16,6 +16,7 @@
         <module>spring_03Annotation</module>
         <module>spring_TaskScheduling</module>
         <module>spring_SpEL</module>
+        <module>spring_Aop</module>
     </modules>
 
     <properties>

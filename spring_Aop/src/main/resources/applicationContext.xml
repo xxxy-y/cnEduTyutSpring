@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <bean id="myAspect" class="aspect.MyAspect"/>
+    <bean id="userDao" class="dao.impl.UserDaoImpl"/>
+    <bean id="annotationAspect" class="aspect.AnnotationAspect"/>
+    <bean id="studentDao" class="dao.impl.StudentDaoImpl"/>
+    <aop:config>
+        <aop:pointcut id="pointCut" expression="execution(void dao.impl.UserDaoImpl.*(..))"/>
+        <aop:aspect ref="myAspect">
+            <aop:before method="before" pointcut="execution(void dao.impl.UserDaoImpl.*(..))"/>
+            <aop:after method="after" pointcut="execution(void dao.impl.UserDaoImpl.*(..))"/>
+            <aop:around method="around" pointcut-ref="pointCut"/>
+            <aop:after-returning method="afterReturning" pointcut-ref="pointCut"/>
+            <!--            <aop:after-throwing method="afterThrowing" pointcut-ref="pointCut"/>-->
+        </aop:aspect>
+    </aop:config>
+    <aop:aspectj-autoproxy/>
+</beans>
