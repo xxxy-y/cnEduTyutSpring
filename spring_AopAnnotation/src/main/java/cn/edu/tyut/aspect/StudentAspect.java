@@ -1,5 +1,6 @@
 package cn.edu.tyut.aspect;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -27,7 +28,8 @@ public class StudentAspect {
     }
 
     @After("execution(void cn.edu.tyut.entity.Student.*(..))")
-    public void after() {
+    public void after(JoinPoint joinPoint) {
         System.out.println("after ...");
+        System.out.println(joinPoint.getTarget());
     }
 }
