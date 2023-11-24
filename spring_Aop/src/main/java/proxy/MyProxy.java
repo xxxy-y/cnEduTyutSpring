@@ -28,7 +28,7 @@ public class MyProxy implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         MyAspect myAspect = new MyAspect();
-        myAspect.check_Permissions();
+        myAspect.checkPermissions();
         Object invoke = method.invoke(userDao, args);
         myAspect.log();
         return invoke;

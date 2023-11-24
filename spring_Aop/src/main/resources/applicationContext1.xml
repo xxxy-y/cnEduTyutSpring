@@ -8,16 +8,9 @@
     <bean id="userDao" class="dao.impl.UserDaoImpl"/>
     <bean id="annotationAspect" class="aspect.AnnotationAspect"/>
     <bean id="studentDao" class="dao.impl.StudentDaoImpl"/>
+    <bean id="interfaceAspect" class="aspect.InterfaceAspect"/>
     <aop:config>
-        <aop:pointcut id="pointCut" expression="execution(void dao.impl.UserDaoImpl.*(..))"/>
-        <aop:aspect ref="myAspect">
-            <aop:before method="before" pointcut="execution(void dao.impl.UserDaoImpl.*(..))"/>
-            <aop:after method="after" pointcut="execution(void dao.impl.UserDaoImpl.*(..))"/>
-            <aop:around method="around" pointcut-ref="pointCut"/>
-            <aop:after-returning method="afterReturning" pointcut-ref="pointCut"/>
-            <!--            <aop:after-throwing method="afterThrowing" pointcut-ref="pointCut"/>-->
-        </aop:aspect>
+        <aop:pointcut id="pointCut" expression="execution(void dao.impl.*.*(..))"/>
+        <aop:advisor advice-ref="interfaceAspect" pointcut-ref="pointCut"/>
     </aop:config>
-    <!--    开启自动注解AOP-->
-    <aop:aspectj-autoproxy/>
 </beans>

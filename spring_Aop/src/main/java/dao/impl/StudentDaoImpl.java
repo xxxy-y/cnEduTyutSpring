@@ -27,4 +27,14 @@ public class StudentDaoImpl implements StudentDao {
     public void deleteStudent() {
         System.out.println("deleteStudent ...");
     }
+
+    /**
+     * 在方法中使用参数, 在增强的方法中也能拿到这个参数.
+     *
+     * @param string >
+     */
+    @Override
+    public void testString(String string) {
+        System.out.println(string + "在StudentDaoImpl中已经输出了");
+    }
 }

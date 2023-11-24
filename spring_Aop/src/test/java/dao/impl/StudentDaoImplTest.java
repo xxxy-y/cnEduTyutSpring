@@ -21,6 +21,13 @@ class StudentDaoImplTest {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         StudentDao student = applicationContext.getBean("studentDao", StudentDao.class);
         student.addStudent();
-//        student.deleteStudent();
+        student.deleteStudent();
+    }
+
+    @Test
+    void deleteStudent() {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext1.xml");
+        StudentDao studentDao = applicationContext.getBean("studentDao", StudentDao.class);
+        studentDao.addStudent();
     }
 }

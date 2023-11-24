@@ -17,5 +17,6 @@ public class UserDaoImpl {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         UserDao userDao = applicationContext.getBean("userDao", UserDao.class);
         userDao.addUser();
+        System.out.println(userDao.getClass());
     }
 }

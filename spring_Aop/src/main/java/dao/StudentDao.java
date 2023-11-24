@@ -18,4 +18,10 @@ public interface StudentDao {
      * >
      */
     void deleteStudent();
+
+    /**
+     * 在方法中使用参数, 在增强的方法中也能拿到这个参数.
+     * @param string >
+     */
+    void testString(String string);
 }
