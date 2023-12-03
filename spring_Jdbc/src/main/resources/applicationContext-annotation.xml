@@ -21,13 +21,10 @@
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
     </bean>
-    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+    <tx:advice id="txAdvice">
         <tx:attributes>
-            <tx:method name="*" propagation="REQUIRED" isolation="DEFAULT" read-only="false"/>
+            <tx:method name="*"/>
         </tx:attributes>
     </tx:advice>
-    <aop:config>
-        <aop:pointcut id="txPointCut" expression="execution(* cn.edu.tyut.*.*.*(..))"/>
-        <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointCut"/>
-    </aop:config>
+    <tx:annotation-driven/>
 </beans>

@@ -2,6 +2,9 @@ package cn.edu.tyut.dao;
 
 import cn.edu.tyut.entity.Account;
 
+import java.io.StringReader;
+import java.util.List;
+
 /**
  * @Author 羊羊
  * @ClassName AccountDao
@@ -31,4 +34,25 @@ public interface AccountDao {
      * @return 0/1
      */
     int deleteAccount(int id);
+
+    /**
+     * select
+     * @param id id
+     * @return account detail
+     */
+    Account findAccountById(int id);
+
+    /**
+     * select
+     * @return list
+     */
+    List<Account> findAllAccount();
+
+    /**
+     * transfer
+     * @param outUser user
+     * @param inUser user
+     * @param money double
+     */
+    void transfer(String outUser, String inUser, Double money);
 }

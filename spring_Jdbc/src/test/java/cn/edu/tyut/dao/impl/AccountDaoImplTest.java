@@ -8,6 +8,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.ByteArrayInputStream;
+import java.util.List;
 import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -64,5 +65,35 @@ class AccountDaoImplTest {
         } else {
             System.out.println("false delete account: id = " + "4");
         }
+    }
+
+    @Test
+    void findAccountById() {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+        AccountDao accountDao = applicationContext.getBean("accountDao", AccountDao.class);
+        Account account = accountDao.findAccountById(2);
+        System.out.println(account);
+    }
+
+    @Test
+    void findAllAccount() {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+        AccountDao accountDao = applicationContext.getBean("accountDao", AccountDao.class);
+        List<Account> allAccount = accountDao.findAllAccount();
+        allAccount.forEach(System.out::println);
+    }
+
+    @Test
+    void transfer02() {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+        AccountDao accountDao = applicationContext.getBean("accountDao", AccountDao.class);
+        accountDao.transfer("uid", "w", 100.00);
+    }
+
+    @Test
+    void transfer01() {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext-annotation.xml");
+        AccountDao accountDao = applicationContext.getBean("accountDao", AccountDao.class);
+        accountDao.transfer("uid", "w", 100.00);
     }
 }

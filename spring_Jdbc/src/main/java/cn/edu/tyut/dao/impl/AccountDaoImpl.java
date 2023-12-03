@@ -2,9 +2,14 @@ package cn.edu.tyut.dao.impl;
 
 import cn.edu.tyut.dao.AccountDao;
 import cn.edu.tyut.entity.Account;
-import org.springframework.cache.annotation.AbstractCachingConfiguration;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.PreparedStatementCreator;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 /**
  * @Author 羊羊
@@ -68,5 +73,52 @@ public class AccountDaoImpl implements AccountDao {
     public int deleteAccount(int id) {
         String sql = "DELETE FROM account WHERE id=?";
         return this.jdbcTemplate.update(sql, id);
+    }
+
+    /**
+     * select
+     * rowMapper的作用是为了将数据表中的数据映射到用户自定义的类中
+     * 通过Java反射机制自动匹配数据库查询结果的列名与目标类的属性名，然后将对应的值设置到目标类的属性中
+     *
+     * @param id id
+     * @return account detail
+     */
+    @Override
+    public Account findAccountById(int id) {
+        String sql = "SELECT * FROM account WHERE id=?";
+        RowMapper<Account> rowMapper = new BeanPropertyRowMapper<>(Account.class);
+        return this.jdbcTemplate.queryForObject(sql, rowMapper, id);
+    }
+
+    /**
+     * select
+     *
+     * @return list
+     */
+    @Override
+    public List<Account> findAllAccount() {
+        String sql = "SELECT * FROM account";
+        RowMapper<Account> rowMapper = new BeanPropertyRowMapper<>(Account.class);
+        return this.jdbcTemplate.query(sql, rowMapper);
+    }
+
+    /**
+     * transfer
+     * propagation:事务的传播行为
+     * isolation:事务的隔离级别
+     * readOnly:指定事务是否为只读
+     *
+     * @param outUser user
+     * @param inUser  user
+     * @param money   double
+     */
+    @Override
+    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.DEFAULT, readOnly = false)
+    public void transfer(String outUser, String inUser, Double money) {
+        String sql = "UPDATE account set balance = balance + ? WHERE username = ?";
+        this.jdbcTemplate.update(sql, money, inUser);
+//        int i = 1 / 0;
+        String sql1 = "UPDATE account set balance = balance - ? WHERE username = ?";
+        this.jdbcTemplate.update(sql1, money, outUser);
     }
 }
