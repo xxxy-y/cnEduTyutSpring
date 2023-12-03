@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class StudentTest {
 
     @Test
-    void say() {
+        void say() {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfiguration.class);
         Student student = applicationContext.getBean("student", Student.class);
         student.say();
