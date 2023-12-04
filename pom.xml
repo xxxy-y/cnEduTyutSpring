@@ -21,6 +21,7 @@
         <module>spring_Jdbc</module>
         <module>spring_LogIn</module>
         <module>integrationOfSpringAndMybatisXML</module>
+        <module>integrationOfSpringAndMybatisAnnotation</module>
     </modules>
 
     <properties>
