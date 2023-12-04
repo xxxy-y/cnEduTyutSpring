@@ -20,6 +20,7 @@
         <module>spring_AopAnnotation</module>
         <module>spring_Jdbc</module>
         <module>spring_LogIn</module>
+        <module>integrationOfSpringAndMybatisXML</module>
     </modules>
 
     <properties>
