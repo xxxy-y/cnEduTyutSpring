@@ -1,20 +1,17 @@
 package cn.edu.tyut.entity;
 
-import lombok.Data;
-
 /**
  * @Author 羊羊
- * @ClassName Student
+ * @ClassName MainStudent
  * @SubmitTime 周日
- * @DATE 2023/11/19
- * @Time 16:53
+ * @DATE 2023/12/24
+ * @Time 19:26
  * @Package_Name cn.edu.tyut.entity
  */
-@Data
-public class Student {
+public class MainStudent {
     private Teacher teacher;
 
-    public Student() {
+    public MainStudent() {
     }
 
     public void setTeacher(Teacher teacher) {

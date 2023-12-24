@@ -17,7 +17,7 @@ class StudentTest {
     @Test
     void setTeacher() {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext-byType.xml");
-        Student bean = applicationContext.getBean("student", Student.class);
+        Student bean = applicationContext.getBean("student01", Student.class);
         System.out.println(bean);
     }
     @Test
