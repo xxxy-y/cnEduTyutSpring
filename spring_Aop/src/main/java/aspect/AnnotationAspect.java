@@ -2,6 +2,7 @@ package aspect;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * @Author 羊羊
@@ -18,7 +19,7 @@ public class AnnotationAspect {
     }
 
     @Around("pointCut()")
-    public Object around(ProceedingJoinPoint proceedingJoinPoint) {
+    public Object around(@NotNull ProceedingJoinPoint proceedingJoinPoint) {
         Object[] args = proceedingJoinPoint.getArgs();
         Object retVal;
         try {

@@ -2,8 +2,7 @@ package aspect;
 
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.springframework.aop.AfterAdvice;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.aop.AfterReturningAdvice;
 import org.springframework.aop.MethodBeforeAdvice;
 
@@ -47,7 +46,7 @@ public class InterfaceAspect implements MethodBeforeAdvice, AfterReturningAdvice
      * @throws Throwable >
      */
     @Override
-    public Object invoke(MethodInvocation invocation) throws Throwable {
+    public Object invoke(@NotNull MethodInvocation invocation) throws Throwable {
         System.out.println("before around ...");
         Object val = invocation.proceed();
         System.out.println("after around ...");

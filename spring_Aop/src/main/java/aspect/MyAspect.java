@@ -2,6 +2,7 @@ package aspect;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * @Author 羊羊
@@ -43,14 +44,14 @@ public class MyAspect {
      *
      * 在AOP中的作用是提供了切入特定位置的能力，并且可以获取和操作连接点的相关信息，使得我们可以在切面逻辑中实现各种操作，如日志记录、参数验证、性能监控和异常处理等
      */
-    public void after(JoinPoint joinPoint) {
+    public void after(@NotNull JoinPoint joinPoint) {
         System.out.print("這是後置方法, ");
         System.out.print("目標類是: " + joinPoint.getTarget());
         System.out.println(", 被織入增强處理的目標方法為: " + joinPoint.getSignature().getName());
     }
 
 
-    public Object around(ProceedingJoinPoint joinPoint) {
+    public Object around(@NotNull ProceedingJoinPoint joinPoint) {
         Object[] args = joinPoint.getArgs();
         Object retVal;
         try {
