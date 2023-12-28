@@ -4,8 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean id="artStudent" class="cn.edu.tyut.entity.ArtStudent" depends-on="student01"/>
-    <bean name="student01" class="cn.edu.tyut.entity.Student01" scope="prototype" init-method="init" destroy-method="destroy"/>
+    <bean name="student01" class="cn.edu.tyut.entity.Student" scope="prototype" init-method="init" destroy-method="destroy"/>
     <bean id="sportStudent" class="cn.edu.tyut.entity.SportStudent" lazy-init="true"/>
-
     <alias name="sportStudent" alias="sStudent"/>
 </beans>

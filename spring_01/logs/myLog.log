@@ -785,3 +785,21 @@ Related cause: org.springframework.beans.factory.UnsatisfiedDependencyException:
  所属类名：org.springframework.beans.factory.support.DefaultListableBeanFactory
  所属线程：main
  日志信息：Creating shared instance of singleton bean 'personB'
+=========================================
+ 日志级别：DEBUG
+ 日志时间：2023-12-28 14:45:54,477
+ 所属类名：org.springframework.context.support.ClassPathXmlApplicationContext
+ 所属线程：main
+ 日志信息：Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@75cd8043
+=========================================
+ 日志级别：DEBUG
+ 日志时间：2023-12-28 14:45:54,599
+ 所属类名：org.springframework.beans.factory.xml.XmlBeanDefinitionReader
+ 所属线程：main
+ 日志信息：Loaded 3 bean definitions from class path resource [applicationContext-Student.xml]
+=========================================
+ 日志级别：DEBUG
+ 日志时间：2023-12-28 14:45:54,635
+ 所属类名：org.springframework.beans.factory.support.DefaultListableBeanFactory
+ 所属线程：main
+ 日志信息：Creating shared instance of singleton bean 'artStudent'

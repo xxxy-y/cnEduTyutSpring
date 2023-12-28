@@ -9,6 +9,10 @@ package cn.edu.tyut.entity;
  * @Package_Name cn.edu.tyut.entity
  */
 public class Student {
+    public Student() {
+        System.out.println("无参构造方法被调用了");
+    }
+
     public void hello() {
         System.out.println("Hello World!");
     }

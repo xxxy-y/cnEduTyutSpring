@@ -1,3 +1,4 @@
+import cn.edu.tyut.entity.Student;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -16,10 +17,10 @@ class HelloSpringTest {
 
     @Test
     void show() {
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
-        HelloSpring helloSpring = applicationContext.getBean("helloSpring", HelloSpring.class);
-        HelloSpring helloSpring1 = (HelloSpring) applicationContext.getBean("helloSpring");
-        helloSpring.show();
-        helloSpring1.show();
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext-Student.xml");
+        Student student01 = applicationContext.getBean("student01", Student.class);
+//        HelloSpring helloSpring1 = (HelloSpring) applicationContext.getBean("helloSpring")
+        student01.hello();
+//        helloSpring1.show();
     }
 }
